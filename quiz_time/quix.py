@@ -7,7 +7,7 @@ from string import ascii_lowercase
 try:
     import tomllib
 except ModuleNotFoundError:
-    import tomlI as tomllib
+    import tomli as tomllib
 
 NUM_QUESTIONS_PER_QUIZ = 5
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"

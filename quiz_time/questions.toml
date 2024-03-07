@@ -143,3 +143,12 @@ label = "Capitals"
     be the capital of Texas and was incorporated in December 1839. Houston,
     Harrisburg, Columbia, and Galveston are all earlier capitals of Texas.
     """
+
+    [[capitals.questions]]
+    question = "What's the capital of The Gambia"
+    answers = ["Banjul"]
+    hint = "Formally known as Bathurst"
+    alternatives = ["Senegal", "Janjangbureh", "Sukuta"]
+    expalnation = """
+    Banjul is the capital city of The Gambia. It is an island and was formally called Bathurst
+    """

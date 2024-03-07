@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Current time</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            height: 100vh;
+            background-color: purple;
+           
+        }
+        h1, p {
+            text-align: center;
+            font-size: 50px;
+        }
+        .style{
+            background-color: aqua;
+            border-radius: 40px;
+            box-shadow:blueviolet;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="style">
+        <h1 id="date"></h1>
+        <p id="time"></p>
+    </div>
+
+    <script>
+        const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        function clockTick() {
+            const dateOutput = document.getElementById("date");
+            const timeOutput = document.getElementById("time");
+
+            const currentDate = new Date();
+            const date = currentDate.getDate();
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+            const year = currentDate.getFullYear();
+            const day = weekday[currentDate.getDay()];
+
+            const formatDate = `${date}/${month}/${year}, ${day}`;
+            dateOutput.textContent = formatDate;
+
+            const hours = String(currentDate.getHours()).padStart(2, '0');
+            const minutes = String(currentDate.getMinutes()).padStart(2, );
+            const seconds = currentDate.getSeconds();
+
+            const formatTime = `${hours}:${minutes}:${seconds}`;
+            timeOutput.textContent = formatTime;
+
+        }
+
+        //Set interval for the seconds
+        setInterval(clockTick, 1000)
+    </script>
+</body>
+</html>
