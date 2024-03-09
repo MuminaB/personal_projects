@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Recipe Finder</title>
+   <style>
+
+   </style>
+</head>
+<body>
+   <h1>Recipe Finder</h1> 
+   <form action="/" method="POST">
+    <input type="text" name="search_query" placeholder="Search for recipes">
+    <input type="submit" value="Search">
+    <a href="/home" class="home-button">Home</a>
+   </form>
+
+   <!-- To check if recipes are available-->
+   {% if recipes%}
+   <h2>Results for "{{ search_query }}"</h2>
+   <ul>
+        {% for recipe in recipes %}
+        <li>
+            <h3 class="recipe-title">{{ recipe.title }}</h3>
+            {% if recipe.image %}
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            {% endif %}
+            <a href="{{ url_for('view_recipe', recipe_id=recipe.id, search_query=search_query) }}">View</a>
+        </li>
+        {{ endfor }}
+   </ul>
+   <!-- If no recipes are found-->
+   {% else %}
+   <p>No recipes found.</p>
+   {% endif %}
+</body>
+</html>
